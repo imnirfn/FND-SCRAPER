@@ -34,24 +34,24 @@ def scrape():
 
 def extract_links():
     # TO-DO : To receive user input url
-    webpage_url = 'http://covid-19.moh.gov.my/terkini/082020/situasi-terkini-14-ogos-2020'
+    webpage_url = 'http://covid-19.moh.gov.my/terkini/082020/situasi-terkini-15-ogos-2020'
     page = urlopen(webpage_url)
     soup = BeautifulSoup(page, 'html.parser')
     links = []
     
-    for link in soup.find_all('a', attrs={'href': re.compile('^/terkini')}):
+    for link in soup.find_all('a', attrs={'href': re.compile('^/terkini/042020')}):
         # TO-DO : To receive user input
         links.append('http://covid-19.moh.gov.my' + link.get('href') + '\n')
-        #print('http://covid-19.moh.gov.my' + link.get('href'))
-    df = pd.DataFrame.from_dict(links)
-    data =  links.to_csv(index=False)
+        print('http://covid-19.moh.gov.my' + link.get('href'))
+    #df = pd.DataFrame.from_dict(links)
+    #data =  links.to_csv(index=False)
 
-    return data
+    #return data
     
-       # with open('urls.txt', 'a') as f_out:
-       #     for line in links:
-       #         f_out.write(line)
+    with open('urls.txt', 'a') as f_out:
+        for line in links:
+            f_out.write(line)
         
 
 #scrape()
-#extract_links()
+extract_links()
