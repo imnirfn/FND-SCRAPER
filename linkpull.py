@@ -39,7 +39,7 @@ def extract_links():
     soup = BeautifulSoup(page, 'html.parser')
     links = []
     
-    for link in soup.find_all('a', attrs={'href': re.compile('^/terkini/082020/situasi-terkini')}):
+    for link in soup.find_all('a', attrs={'href': re.compile('^/sorotan')}):
         # TO-DO : To receive user input
         links.append('http://covid-19.moh.gov.my' + link.get('href') + '\n')
         print('http://covid-19.moh.gov.my' + link.get('href'))

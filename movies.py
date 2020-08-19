@@ -28,7 +28,7 @@ def scrape_movies():
 	soup = BeautifulSoup(response.text, 'html.parser')
 
 	movie_divs = soup.find_all('div', class_ ='lister-item mode-advanced')
-	# TO-DO:
+	# TO-DO: ALL DONE
 	# extract each column of data
 	# name of movie(3rd div, inside h3 and a), year release(3rd div, inside span and a classname), imdb rating, metascore, num of votes
 	names = []
