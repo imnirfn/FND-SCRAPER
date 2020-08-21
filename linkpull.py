@@ -9,7 +9,7 @@ def handler(event, context):
     ACCESS_KEY_ID = 'AKIAUPGXYIMMXYPTFWMH'
     ACCESS_SECRET_KEY = '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'
     BUCKET_NAME = 'tinggitecc'
-    FILE_NAME = "test_lambda.csv"
+    FILE_NAME = "test_lambda2.csv"
 
     data = extract_links()
 
