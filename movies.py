@@ -69,6 +69,7 @@ def scrape_movies():
     		'vote': votes
 	})
 	#test_df.to_csv(r'/Users/s3ns3/Documents/Projects/vuejs/fnd-scraper/movies.csv')
+	print("hello test")
 	print(test_df)
 	data = test_df.to_csv(index=False)
 	return data
