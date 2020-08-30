@@ -3,3 +3,6 @@ requests
 boto3
 bs4
 pandas
+tensorflow
+nltk
+pickleshare
