@@ -12,7 +12,7 @@ def handler(event, context):
 
     # json.loads(json.dumps(event))
     url = json.loads(json.dumps(event))
-    parse = ns.build(url["data"], language='en')
+    parse = ns.build(url["data"], memoize_articles=False, language='en')
     
     article = parse.articles[0]
     article.download()
