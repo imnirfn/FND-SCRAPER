@@ -12,9 +12,6 @@ from tensorflow.keras.preprocessing import sequence
 def handler(event, context):
 
     # grab environment variables
-    ENDPOINT_NAME = 'tinggitecc-fnd-model-endpoint'
-    ACCESS_KEY_ID = 'AKIAUPGXYIMMXYPTFWMH'
-    ACCESS_SECRET_KEY = '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'
 
     print("Received event: " + json.dumps(event, indent=2))
 

@@ -2,6 +2,7 @@ import newspaper as ns
 import boto3
 import requests
 import json
+import urllib.request
 
 def handler(event, context):
 
@@ -12,7 +13,7 @@ def handler(event, context):
 
     # json.loads(json.dumps(event))
     url = json.loads(json.dumps(event))
-    parse = ns.build(url["data"], memoize_articles=False, language='en')
+    parse = ns.build(url["data"], language='en')
     
     article = parse.articles[0]
     article.download()
@@ -20,6 +21,8 @@ def handler(event, context):
 
     print(article.text)
     data = article.text
+
+
 
     # return response
     x = {
@@ -63,5 +66,6 @@ def to_docs():
     print(data)
     return data
 
-
-to_docs()
+def tunnel():
+   cmd = 'curl '
+   os.system(cmd)
